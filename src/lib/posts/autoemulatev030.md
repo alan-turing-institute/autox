@@ -1,6 +1,7 @@
 ---
 title: "AutoEmulate v0.3.0 release"
 date: 2025-04-30
+category: software
 description: "Updates on new features in AutoEmulate v0.3.0 release"
 ---
 

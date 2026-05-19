@@ -14,7 +14,26 @@
 		{#each posts as post}
 			<li>
 				<a href="/blog/{post.slug}" class="post-card">
-					<span class="date">{new Date(post.date).toLocaleDateString('en-GB', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
+					<div class="card-meta">
+						<span class="date">{new Date(post.date).toLocaleDateString('en-GB', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
+						<span class="badge {post.category}">
+							{#if post.category === 'software'}
+								<svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+									<polyline points="5,3.5 1,8 5,12.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+									<polyline points="11,3.5 15,8 11,12.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+								</svg>
+								Software
+							{:else}
+								<svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+									<rect x="2.5" y="1.5" width="9" height="12" rx="1" stroke="currentColor" stroke-width="1.5"/>
+									<line x1="5" y1="5.5" x2="9" y2="5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+									<line x1="5" y1="8" x2="9" y2="8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+									<line x1="5" y1="10.5" x2="7.5" y2="10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+								</svg>
+								Research
+							{/if}
+						</span>
+					</div>
 					<h2>{post.title}</h2>
 					<p>{post.description}</p>
 					<span class="read-more">Read more →</span>
@@ -77,6 +96,43 @@
 		color: #7a8299;
 		text-transform: uppercase;
 		letter-spacing: 0.06em;
+	}
+
+	.card-meta {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin-bottom: 0.1rem;
+	}
+
+	.badge {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.35rem;
+		font-size: 0.78rem;
+		font-weight: 600;
+		letter-spacing: 0.04em;
+		padding: 0.25rem 0.65rem;
+		border-radius: 999px;
+		text-transform: uppercase;
+	}
+
+	.badge svg {
+		width: 13px;
+		height: 13px;
+		flex-shrink: 0;
+	}
+
+	.badge.software {
+		background: rgba(126, 184, 247, 0.12);
+		color: #7eb8f7;
+		border: 1px solid rgba(126, 184, 247, 0.25);
+	}
+
+	.badge.research {
+		background: rgba(167, 139, 250, 0.12);
+		color: #a78bfa;
+		border: 1px solid rgba(167, 139, 250, 0.25);
 	}
 
 	.post-card h2 {

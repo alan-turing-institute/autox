@@ -3,6 +3,7 @@ export interface Post {
 	title: string;
 	date: string;
 	description: string;
+	category: 'software' | 'research';
 	content: string;
 }
 
@@ -41,6 +42,7 @@ export const posts: Post[] = Object.entries(rawFiles)
 			title: data.title,
 			date: data.date,
 			description: data.description,
+			category: (data.category === 'software' ? 'software' : 'research') as Post['category'],
 			content
 		};
 	})
