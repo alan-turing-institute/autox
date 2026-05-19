@@ -126,12 +126,6 @@
 		flex-shrink: 0;
 	}
 
-	.card h3 {
-		font-size: 1.3rem;
-		font-weight: 700;
-		color: #ffffff;
-	}
-
 	.card p {
 		font-size: 1rem;
 		color: #9aa0b4;

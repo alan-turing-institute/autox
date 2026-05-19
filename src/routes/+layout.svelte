@@ -1,6 +1,6 @@
 <script lang="ts">
 	import favicon from '$lib/assets/favicon.svg';
-	import { page } from '$app/stores';
+	import { page } from '$app/state';
 
 	let { children } = $props();
 </script>
@@ -13,8 +13,8 @@
 <nav>
 	<a href="/" class="nav-logo">AutoX</a>
 	<ul>
-		<li><a href="/" class={$page.url.pathname === '/' ? 'active' : ''}>Home</a></li>
-		<li><a href="/blog" class={$page.url.pathname.startsWith('/blog') ? 'active' : ''}>Blog</a></li>
+		<li><a href="/" class={page.url.pathname === '/' ? 'active' : ''}>Home</a></li>
+		<li><a href="/blog" class={page.url.pathname.startsWith('/blog') ? 'active' : ''}>Blog</a></li>
 	</ul>
 </nav>
 
