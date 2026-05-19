@@ -1,6 +1,6 @@
 <section class="hero">
 	<h1>AutoX</h1>
-	<p class="tagline">AI for Physical Systems toolkit</p>
+	<p class="tagline">AI for Physical Systems team at the Alan Turing Institute</p>
 </section>
 
 <section class="packages">
@@ -16,20 +16,7 @@
 				src="https://raw.githubusercontent.com/alan-turing-institute/autoemulate/main/misc/AE.png"
 				alt="AutoEmulate logo"
 			/>
-			<p>Differentiable emulation toolkit for non-ML experts</p>
-		</a>
-
-		<a
-			href="https://github.com/alan-turing-institute/autosim"
-			target="_blank"
-			rel="noopener noreferrer"
-			class="card"
-		>
-			<img
-				src="https://raw.githubusercontent.com/alan-turing-institute/autosim/refs/heads/main/AS.png"
-				alt="AutoSim logo"
-			/>
-			<p>Physical systems data generation</p>
+			<p><b>Differentiable emulation toolkit for non-ML experts.</b><br><br> Run a complete machine learning pipeline to compare and optimise a wide range of emulators, with support for downstream tasks like sensitivity analysis and calibration.</p>
 		</a>
 
 		<a
@@ -42,8 +29,23 @@
 				src="https://raw.githubusercontent.com/alan-turing-institute/autocast/refs/heads/main/AC.png"
 				alt="AutoCast logo"
 			/>
-			<p>Spatiotemporal forecasting framework</p>
+			<p><b>Spatiotemporal forecasting framework.</b><br><br>End-to-end training with SotA architectures. Supports both generative and deterministic pipelines, training in ambient or latent space, and CRPS-family ensemble objectives.</p>
 		</a>
+
+		<a
+			href="https://github.com/alan-turing-institute/autosim"
+			target="_blank"
+			rel="noopener noreferrer"
+			class="card"
+		>
+			<img
+				src="https://raw.githubusercontent.com/alan-turing-institute/autosim/refs/heads/main/AS.png"
+				alt="AutoSim logo"
+			/>
+			<p><b>Physical systems data generation.</b><br><br>Provides multiple simulators through a consistent API, making it easy to generate data at different resolutions and parameter ranges for rapid prototyping.</p>
+		</a>
+
+
 	</div>
 </section>
 

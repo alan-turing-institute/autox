@@ -8,7 +8,7 @@
 
 <section class="blog-list">
 	<h1>Blog</h1>
-	<p class="subtitle">Research and software updates from the AI for Physical Systems team at the Alan Turing Institute.</p>
+	<p class="subtitle">Research and software updates from the AIPHYS team at the Alan Turing Institute.</p>
 
 	<ul>
 		{#each posts as post}
