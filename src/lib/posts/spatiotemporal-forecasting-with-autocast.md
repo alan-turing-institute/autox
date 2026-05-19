@@ -6,7 +6,6 @@ description: "Updates on new features in AutoEmulate v0.3.0 release"
 
 We're excited to announce the progress on AutoEmulate in this v0.3.0 release -- we've added several exciting new features advancing the package as an all-purpose emulation toolkit, as well as adding several new tutorials demonstrating the package in action. In the two sections below we look back at "What's new" before looking ahead to "What's next" in the upcoming cycle.
 
-<br/><br/>
 If you'd like to discuss any of our work on AutoEmulate or AI for Physical Systems, feel free to reach out to us at aiphys@turing.ac.uk
 
 ## What's new
@@ -16,9 +15,7 @@ If you'd like to discuss any of our work on AutoEmulate or AI for Physical Syste
 - This technique aims to redefine the parameter space so that the predictions from the emulator are best representative of real observations.
 - This is done by iteratively ruling out regions of the parameter space that are implausible according to observed values.
 
-![](https://raw.githubusercontent.com/alan-turing-institute/autoemulate/99d32b3d5a1d353c1f9711c3400ad1ba528ccc62/misc/history_matching_workflow.png)
-
-
+<img src="https://raw.githubusercontent.com/alan-turing-institute/autoemulate/99d32b3d5a1d353c1f9711c3400ad1ba528ccc62/misc/history_matching_workflow.png" alt="History matching workflow" style="max-width: 40%; display: block; margin: 1.75rem auto;" />
 
 ### Dimensionality reduction
 - To accelerate large-scale simulations, AutoEmulate must address the challenge of high-dimensional data. In this new release, we have integrated **dimensionality reduction** techniques into the framework, including both statistical methods like **Principal Component Analysis (PCA)** and deep learning approaches such as **Variational Autoencoders (VAEs)**.
@@ -105,7 +102,7 @@ In this example, AutoEmulate selects the optimal combination of dimensionality r
 - Check out our [active learning tutorial notebook](https://alan-turing-institute.github.io/autoemulate/tutorials/simulator/02_active_learning.html), where we demonstrate several different active learning algorithms.
 - A simulator can be seen as a function mapping from inputs x to outputs y, and an emulator mapping from inputs x to *approximated* outputs &#375;. We want &#375; to be as close as possible to y. See the schematic below for a basic active learning process.
 
-![](https://raw.githubusercontent.com/alan-turing-institute/autoemulate/refs/heads/main/docs/img/sal_schematic.svg)
+<img src="https://raw.githubusercontent.com/alan-turing-institute/autoemulate/refs/heads/main/docs/img/sal_schematic.svg" alt="Active learning schematic" style="max-width: 55%; display: block; margin: 1.75rem auto;" />
 
 ### End-to-end workflow example with a user-provided simulator
 
@@ -113,11 +110,9 @@ In this [example](https://github.com/alan-turing-institute/autoemulate/blob/main
 
 ![](https://raw.githubusercontent.com/alan-turing-institute/autoemulate/dac07678bc9eefc51ebbcc911a216a1297721f02/misc/workflow.png)
 
-
 ## What's next
 
 We are always working on extending AutoEmulate to handle a wider range of use cases. Our next development goals focus on:
 - Introducing **more complex models**. This includes more types of Gaussian Processes and adding ensemble methods as well as support for multimodal and multifidelity data. 
 - **Expanding downstream task capabilities** (e.g., uncertainty quantification, data assimilation, inverse design, optimal sensor placement) by adding in-built tools for typical emulation workflows, alongside a PyTorch backend refactor to enable seamless integration with other tools in the broader ecosystem. 
 - Continuing development of the active learning functionality, aiming to integrate it into the main release, to facilitate **simulator-in-the-loop** deployments.
-

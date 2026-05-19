@@ -72,11 +72,36 @@
 		padding-left: 1rem;
 	}
 
+	.content :global(h1) {
+		font-size: 2rem;
+		font-weight: 800;
+		color: #ffffff;
+		margin: 3rem 0 0.75rem;
+		line-height: 1.25;
+	}
+
 	.content :global(h2) {
-		font-size: 1.4rem;
+		font-size: 1.55rem;
 		font-weight: 700;
 		color: #ffffff;
 		margin: 2.5rem 0 0.75rem;
+		line-height: 1.3;
+	}
+
+	.content :global(h3) {
+		font-size: 1.25rem;
+		font-weight: 700;
+		color: #e8eaf0;
+		margin: 2rem 0 0.6rem;
+	}
+
+	.content :global(h4) {
+		font-size: 1.05rem;
+		font-weight: 600;
+		color: #c0c8dc;
+		margin: 1.75rem 0 0.5rem;
+		text-transform: uppercase;
+		letter-spacing: 0.04em;
 	}
 
 	.content :global(p) {
@@ -110,6 +135,57 @@
 		color: #7eb8f7;
 	}
 
+	.content :global(img) {
+		max-width: 100%;
+		height: auto;
+		border-radius: 8px;
+		display: block;
+		margin: 1.75rem auto;
+	}
+
+	.content :global(hr) {
+		border: none;
+		border-top: 1px solid rgba(255, 255, 255, 0.1);
+		margin: 2.5rem 0;
+	}
+
+	.content :global(blockquote) {
+		border-left: 3px solid rgba(126, 184, 247, 0.5);
+		padding: 0.5rem 0 0.5rem 1.25rem;
+		margin: 1.5rem 0;
+		color: #9aa0b4;
+		font-style: italic;
+	}
+
+	.content :global(table) {
+		width: 100%;
+		border-collapse: collapse;
+		margin: 1.75rem 0;
+		font-size: 0.95rem;
+	}
+
+	.content :global(thead) {
+		background: rgba(255, 255, 255, 0.06);
+	}
+
+	.content :global(th) {
+		text-align: left;
+		padding: 0.75rem 1rem;
+		color: #ffffff;
+		font-weight: 600;
+		border-bottom: 2px solid rgba(126, 184, 247, 0.3);
+	}
+
+	.content :global(td) {
+		padding: 0.65rem 1rem;
+		color: #c0c8dc;
+		border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+	}
+
+	.content :global(tr:last-child td) {
+		border-bottom: none;
+	}
+
 	.content :global(pre) {
 		background: rgba(255, 255, 255, 0.06);
 		border: 1px solid rgba(255, 255, 255, 0.1);
@@ -128,5 +204,12 @@
 	.content :global(pre code) {
 		background: none;
 		padding: 0;
+	}
+
+	.content :global(:not(pre) > code) {
+		background: rgba(255, 255, 255, 0.08);
+		padding: 0.15em 0.4em;
+		border-radius: 4px;
+		font-size: 0.85em;
 	}
 </style>

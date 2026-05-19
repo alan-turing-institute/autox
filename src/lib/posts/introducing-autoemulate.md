@@ -6,12 +6,10 @@ description: "Updates on new features in AutoEmulate v1.0.0 release"
 
 🎉 We're excited to announce AutoEmulate's first major release with v1.0.0 🎉
 
-<br/><br/>
 This release sees the package fully integrated into the PyTorch ecosystem; PyTorch is one of the most popular open-source deep learning frameworks and one of the bedrocks of modern machine learning with Python.
 
 This release also contains new features, including methods for uncertainty quantification;  ensemble-based emulator models, which output predictions with uncertainty, and Bayesian model calibration, which enables inference of parameters likely to have generated observed data with uncertainty.
 
-<br/><br/>
 If you'd like to discuss any of our work on AutoEmulate or AI for Physical Systems, feel free to reach out to us at aiphys@turing.ac.uk
 
 ## What's new
@@ -20,7 +18,6 @@ If you'd like to discuss any of our work on AutoEmulate or AI for Physical Syste
 
 AutoEmulate was originally built on top of the scikit-learn framework, which is a great library for traditional machine learning tasks. However, as we moved towards more complex models and larger datasets, we found that we needed the flexibility and performance that PyTorch provides.
 
-<br/><br/>
 The new PyTorch backend allows AutoEmulate to take advantage of PyTorch's powerful features, including (but not limited to):
 
 - Leveraging GPU acceleration, making training and inference much faster.
@@ -32,7 +29,7 @@ The new PyTorch backend allows AutoEmulate to take advantage of PyTorch's powerf
 AutoEmulate v1.0.0 includes a new set of `Ensemble` models where we combine multiple emulators and quantify uncertainty by looking at the distribution over outputs. We similarly implemented MC dropout, where we get uncertainty quantification by running an NN multiple times with dropout turned on.
 <br/><br/>
 In a continuation of our integration with GPyTorch for Gaussian Processes we have added a Gaussian Process emulator with correlated outputs.
-<br/><br/>
+
 We have refactored the existing emulator models to use PyTorch where practical. Additionally, we have retained support for several non-PyTorch models that our userbase has found useful. The table below summarises which emulators available in this release are implemented in PyTorch, support multi-output emulation (MO) or auto-differentiation (AD), or provide predictive uncertainty quantification (UQ).
 
 | Emulator | PyTorch | MO | AD | UQ |
