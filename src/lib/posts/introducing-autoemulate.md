@@ -1,29 +1,65 @@
 ---
-title: "Introducing AutoEmulate: Differentiable Emulation for Physical Systems"
-date: 2025-03-12
-description: "A look at how AutoEmulate makes it easy for non-ML experts to build fast, differentiable surrogate models for complex physical simulations."
+title: "AutoEmulate v1.0.0 release"
+date: 2025-07-31
+description: "Updates on new features in AutoEmulate v1.0.0 release"
 ---
 
-## What is AutoEmulate?
+🎉 We're excited to announce AutoEmulate's first major release with v1.0.0 🎉
 
-Physical simulations can be extraordinarily expensive to run. A single evaluation of a computational fluid dynamics model might take hours on a supercomputer. AutoEmulate addresses this by learning a fast, differentiable surrogate — an *emulator* — directly from simulation data.
+<br/><br/>
+This release sees the package fully integrated into the PyTorch ecosystem; PyTorch is one of the most popular open-source deep learning frameworks and one of the bedrocks of modern machine learning with Python.
 
-## Key features
+This release also contains new features, including methods for uncertainty quantification;  ensemble-based emulator models, which output predictions with uncertainty, and Bayesian model calibration, which enables inference of parameters likely to have generated observed data with uncertainty.
 
-- **Automatic model selection**: AutoEmulate benchmarks a range of emulator architectures (Gaussian processes, neural networks, gradient-boosted trees) and returns the best performer for your dataset.
-- **Differentiability**: All emulators expose gradients, enabling downstream optimisation and uncertainty propagation.
-- **Non-ML friendly API**: A scikit-learn–style interface means you can get started with just a few lines of Python.
+<br/><br/>
+If you'd like to discuss any of our work on AutoEmulate or AI for Physical Systems, feel free to reach out to us at aiphys@turing.ac.uk
 
-## Getting started
+## What's new
 
-```python
-from autoemulate import AutoEmulate
+### PyTorch refactor and package redesign
 
-ae = AutoEmulate()
-ae.setup(X_train, y_train)
-ae.compare()
-best = ae.get_best_emulator()
-predictions = best.predict(X_test)
-```
+AutoEmulate was originally built on top of the scikit-learn framework, which is a great library for traditional machine learning tasks. However, as we moved towards more complex models and larger datasets, we found that we needed the flexibility and performance that PyTorch provides.
 
-We are actively developing AutoEmulate and welcome contributions. See the [GitHub repository](https://github.com/alan-turing-institute/autoemulate) to get involved.
+<br/><br/>
+The new PyTorch backend allows AutoEmulate to take advantage of PyTorch's powerful features, including (but not limited to):
+
+- Leveraging GPU acceleration, making training and inference much faster.
+- Enabling automatic differentiation via PyTorch's autograd system.
+- Seamlessly integrating AutoEmulate with other tools in the broader ecosystem, enabling end-to-end emulation workflows.
+
+### A new set of Emulator models
+
+AutoEmulate v1.0.0 includes a new set of `Ensemble` models where we combine multiple emulators and quantify uncertainty by looking at the distribution over outputs. We similarly implemented MC dropout, where we get uncertainty quantification by running an NN multiple times with dropout turned on.
+<br/><br/>
+In a continuation of our integration with GPyTorch for Gaussian Processes we have added a Gaussian Process emulator with correlated outputs.
+<br/><br/>
+We have refactored the existing emulator models to use PyTorch where practical. Additionally, we have retained support for several non-PyTorch models that our userbase has found useful. The table below summarises which emulators available in this release are implemented in PyTorch, support multi-output emulation (MO) or auto-differentiation (AD), or provide predictive uncertainty quantification (UQ).
+
+| Emulator | PyTorch | MO | AD | UQ |
+|----------|-------|---------|----|----|
+| GaussianProcess | ✔️ | ✔️ | ✔️ | ✔️ |
+| GaussianProcessCorrelated | ✔️ | ✔️ | ✔️ | ✔️ |
+| EnsembleMLP | ✔️ | ✔️ | ✔️ | ✔️ |
+| EnsembleMLPDropout | ✔️ | ✔️ | ✔️ | ✔️ |
+| MLP | ✔️ | ✔️ | ✔️ | ❌ |
+| PolynomialRegression | ✔️ | ✔️ | ✔️ | ❌ |
+| RadialBasisFunctions | ✔️ | ✔️ | ✔️ | ❌ |
+| RandomForest | scikit-learn  | ✔️ | ❌ | ❌ |
+| SupportVectorMachine | scikit-learn | ❌ | ❌ | ❌ |
+| LightGBM | LightGBM | ❌ | ❌ | ❌ |
+
+### Bayesian model calibration
+
+Bayesian calibration is a method for estimating which input parameters were most likely to produce observed data. An advantage over other calibration methods is that it returns a probability distribution over the input parameters rather than just point estimates.
+Performing Bayesian calibration requires a fit emulator and observations associated with the simulator output. Check out our new [tutorial](https://alan-turing-institute.github.io/autoemulate/tutorials/tasks/03_bayes_calibration.html) for more details on how to use this feature.
+
+### Upgraded features
+
+- **Simulator in the loop**: Some features in AutoEmulate such as *active learning* require the user to provide a simulator that can be run by AutoEmulate. AutoEmulate now supports easy integration of simulators into the emulation workflow. This is achieved through a subclassing mechanism of the *Simulator* base class, allowing the users to define a method to run their simulation, taking in the input parameters and returning the output variables. See our [custom simulations tutorial](https://alan-turing-institute.github.io/autoemulate/tutorials/simulator/01_custom_simulations.html) for more details.
+- **Active learning** is now a core feature of AutoEmulate. Active learning intelligently selects informative simulator evaluations to maximize emulator improvement with minimal computational cost. See our [active learning tutorial](https://alan-turing-institute.github.io/autoemulate/tutorials/simulator/02_active_learning.html) for more details.
+- **History matching** We have refactored the history matching implementation into two separate classes. It can now be used as a standalone metric to evaluate emulator predictions as well as part of a simulator in the loop workflow. See our two updated history matching tutorials [1](https://alan-turing-institute.github.io/autoemulate/tutorials/tasks/02_history_matching.html) and [2](https://alan-turing-institute.github.io/autoemulate/tutorials/simulator/03_history_matching.html) for more details.
+
+
+## What's next
+
+Looking ahead, we are working on providing support for more complex simulation outputs including spatial and temporal data, which will allow a wider range of applications to benefit from AutoEmulate.
