@@ -8,7 +8,7 @@
 
 <section class="blog-list">
 	<h1>Blog</h1>
-	<p class="subtitle">Updates, tutorials, and research from the AutoX team</p>
+	<p class="subtitle">Research and software updates from the AI for Physical Systems team at the Alan Turing Institute.</p>
 
 	<ul>
 		{#each posts as post}
