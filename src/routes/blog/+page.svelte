@@ -3,7 +3,7 @@
 </script>
 
 <svelte:head>
-	<title>Blog – AutoX</title>
+	<title>AutoX Blog</title>
 </svelte:head>
 
 <section class="blog-list">
