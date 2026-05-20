@@ -89,7 +89,7 @@
 			</div>
 		</div>
 
-		<div class="paper-card">
+		<!-- <div class="paper-card">
 			<div class="paper-meta">
 				<span class="venue">The Journal of Open Source Software· 2025</span>
 			</div>
@@ -100,7 +100,7 @@
 				<a href="https://joss.theoj.org/papers/10.21105/joss.07626" class="paper-link" target="_blank" rel="noopener noreferrer">Paper →</a>
 				<a href="https://github.com/alan-turing-institute/autoemulate" class="paper-link" target="_blank" rel="noopener noreferrer">Code →</a>
 			</div>
-		</div>
+		</div> -->
 
 	</div>
 </section>
