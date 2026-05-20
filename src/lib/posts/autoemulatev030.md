@@ -2,7 +2,7 @@
 title: "AutoEmulate v0.3.0 release"
 date: 2025-04-30
 category: software
-description: "Updates on new features in AutoEmulate v0.3.0 release."
+description: "Updates on new features in AutoEmulate v0.3.0 release"
 ---
 
 We're excited to announce the progress on AutoEmulate in this v0.3.0 release -- we've added several exciting new features advancing the package as an all-purpose emulation toolkit, as well as adding several new tutorials demonstrating the package in action. In the two sections below we look back at "What's new" before looking ahead to "What's next" in the upcoming cycle.
