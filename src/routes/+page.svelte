@@ -78,27 +78,27 @@
 
 		<div class="paper-card">
 			<div class="paper-meta">
-				<span class="venue">Conference / Journal · 2025</span>
+				<span class="venue preprint">Preprint · arXiv · 2026</span>
 			</div>
-			<h3 class="paper-title">Paper Title Placeholder One</h3>
-			<p class="paper-authors">Author A, Author B, Author C</p>
-			<p class="paper-abstract">A short description of what this paper is about and what contributions it makes to the field of AI for physical systems.</p>
+			<h3 class="paper-title">Reliability of Probabilistic Emulation of Physical Systems</h3>
+			<p class="paper-authors">Sam F. Greenbury, Radka Jersakova, Paolo Conti, Marjan Famili, Christopher Iliffe Sprague, Edwin Brown, Jason D McEwen</p>
+			<p class="paper-abstract">Benchmarking probabilistic models of physical systems.</p>
 			<div class="paper-links">
-				<a href="#" class="paper-link">Paper →</a>
-				<a href="#" class="paper-link">Code →</a>
+				<a href="https://arxiv.org" class="paper-link">arXiv →</a>
+				<a href="https://github.com/alan-turing-institute/autocast" class="paper-link">Code →</a>
 			</div>
 		</div>
 
 		<div class="paper-card">
 			<div class="paper-meta">
-				<span class="venue preprint">Preprint · arXiv · 2025</span>
+				<span class="venue">The Journal of Open Source Software· 2025</span>
 			</div>
-			<h3 class="paper-title">Preprint Title Placeholder</h3>
-			<p class="paper-authors">Author A, Author B, Author C</p>
-			<p class="paper-abstract">A short description of what this preprint is about and what contributions it makes to the field of AI for physical systems.</p>
+			<h3 class="paper-title">AutoEmulate: A Python package for semi-automated emulation</h3>
+			<p class="paper-authors">Martin A. Stoffel, Bryan M. Li, Kalle Westerling, Sophie Arana, Max Balmus, Eric Daub, Steve Niederer</p>
+			<p class="paper-abstract">Replace complex simulations with fast, accurate emulators.</p>
 			<div class="paper-links">
-				<a href="https://arxiv.org" class="paper-link">arXiv →</a>
-				<a href="#" class="paper-link">Code →</a>
+				<a href="https://joss.theoj.org/papers/10.21105/joss.07626" class="paper-link">Paper →</a>
+				<a href="https://github.com/alan-turing-institute/autoemulate" class="paper-link">Code →</a>
 			</div>
 		</div>
 
