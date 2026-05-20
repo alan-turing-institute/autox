@@ -91,7 +91,7 @@
 
 		<div class="paper-card">
 			<div class="paper-meta">
-				<span class="venue preprint">Preprint · ß 2025</span>
+				<span class="venue preprint">Preprint · arXiv · 2025</span>
 			</div>
 			<h3 class="paper-title">Preprint Title Placeholder</h3>
 			<p class="paper-authors">Author A, Author B, Author C</p>
@@ -282,9 +282,9 @@
 		letter-spacing: 0.06em;
 	}
 
-	.venue.preprint {
+	/* .venue.preprint {
 		color: #f0a070;
-	}
+	} */
 
 	.paper-title {
 		font-size: 1.1rem;
