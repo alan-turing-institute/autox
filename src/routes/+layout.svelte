@@ -1,17 +1,17 @@
 <script lang="ts">
-	import favicon from '$lib/assets/favicon.svg';
+	import autoxImg from '$lib/assets/AutoX_blank.png';
 	import { page } from '$app/state';
 
 	let { children } = $props();
 </script>
 
 <svelte:head>
-	<link rel="icon" href={favicon} />
-	<title>AutoX – AI for Physical Systems toolkit</title>
+	<link rel="icon" href={autoxImg} />
+	<title>AutoX</title>
 </svelte:head>
 
 <nav>
-	<a href="/" class="nav-logo">AutoX</a>
+	<a href="/" class="nav-logo">Auto<img src={autoxImg} alt="X" class="logo-x" /></a>
 	<ul>
 		<li><a href="/" class={page.url.pathname === '/' ? 'active' : ''}>Home</a></li>
 		<li><a href="/blog" class={page.url.pathname.startsWith('/blog') ? 'active' : ''}>Blog</a></li>
@@ -71,6 +71,15 @@
 		color: #ffffff;
 		letter-spacing: 0.04em;
 		text-decoration: none;
+		display: inline-flex;
+		align-items: center;
+	}
+
+	.nav-logo .logo-x {
+		height: .9em;
+		width: auto;
+		vertical-align: middle;
+		margin-left: -0.05em;
 	}
 
 	nav ul {

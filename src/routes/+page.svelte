@@ -1,5 +1,9 @@
+<script lang="ts">
+	import autoxImg from '$lib/assets/AutoX_blank.png';
+</script>
+
 <section class="hero">
-	<h1>AutoX</h1>
+	<h1>Auto<img src={autoxImg} alt="X" class="hero-x" /></h1>
 	<p class="tagline">AI for Physical Systems team at the Alan Turing Institute</p>
 </section>
 
@@ -64,6 +68,17 @@
 		-webkit-text-fill-color: transparent;
 		background-clip: text;
 		line-height: 1.1;
+		display: inline-flex;
+		align-items: center;
+	}
+
+	.hero-x {
+		height: 0.9em;
+		width: auto;
+		margin-left: -0.05em;
+		vertical-align: middle;
+		isolation: isolate;
+		position: relative;
 	}
 
 	.tagline {
