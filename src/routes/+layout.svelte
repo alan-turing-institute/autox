@@ -1,6 +1,5 @@
 <script lang="ts">
 	import autoxImg from '$lib/assets/AutoX_blank.png';
-	import { page } from '$app/state';
 
 	let { children } = $props();
 </script>
@@ -11,11 +10,7 @@
 </svelte:head>
 
 <nav>
-	<a href="/" class="nav-logo">Auto<img src={autoxImg} alt="X" class="logo-x" /></a>
-	<ul>
-		<li><a href="/" class={page.url.pathname === '/' ? 'active' : ''}>Home</a></li>
-		<li><a href="/blog" class={page.url.pathname.startsWith('/blog') ? 'active' : ''}>Blog</a></li>
-	</ul>
+	<span class="nav-logo">Auto<img src={autoxImg} alt="X" class="logo-x" /></span>
 </nav>
 
 <main>
@@ -80,24 +75,6 @@
 		width: auto;
 		vertical-align: middle;
 		margin-left: -0.05em;
-	}
-
-	nav ul {
-		list-style: none;
-		display: flex;
-		gap: 2rem;
-	}
-
-	nav ul a {
-		font-size: 0.95rem;
-		color: #b0b8cc;
-		transition: color 0.2s;
-	}
-
-	nav ul a:hover,
-	nav ul a.active {
-		color: #ffffff;
-		text-decoration: none;
 	}
 
 	main {
