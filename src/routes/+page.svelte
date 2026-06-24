@@ -84,7 +84,7 @@
 			<p class="paper-authors">Sam F. Greenbury, Radka Jersakova, Paolo Conti, Marjan Famili, Christopher Iliffe Sprague, Edwin Brown, Jason D McEwen</p>
 			<p class="paper-abstract">Benchmarking probabilistic models of physical systems</p>
 			<div class="paper-links">
-				<a href="https://arxiv.org" class="paper-link" target="_blank" rel="noopener noreferrer">arXiv →</a>
+				<a href="https://arxiv.org/abs/2606.12997" class="paper-link" target="_blank" rel="noopener noreferrer">arXiv →</a>
 				<a href="https://github.com/alan-turing-institute/autocast" class="paper-link" target="_blank" rel="noopener noreferrer">Code →</a>
 			</div>
 		</div>
