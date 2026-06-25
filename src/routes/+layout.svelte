@@ -1,6 +1,5 @@
 <script lang="ts">
 	import autoxImg from '$lib/assets/AutoX_blank.png';
-	import { page } from '$app/state';
 
 	let { children } = $props();
 </script>
@@ -9,14 +8,6 @@
 	<link rel="icon" href={autoxImg} />
 	<title>AutoX</title>
 </svelte:head>
-
-<nav>
-	<a href="/" class="nav-logo">Auto<img src={autoxImg} alt="X" class="logo-x" /></a>
-	<ul>
-		<li><a href="/" class={page.url.pathname === '/' ? 'active' : ''}>Home</a></li>
-		<li><a href="/blog" class={page.url.pathname.startsWith('/blog') ? 'active' : ''}>Blog</a></li>
-	</ul>
-</nav>
 
 <main>
 	{@render children()}
@@ -50,54 +41,6 @@
 
 	:global(a:hover) {
 		text-decoration: underline;
-	}
-
-	nav {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		padding: 1rem 2.5rem;
-		background: rgba(255, 255, 255, 0.04);
-		border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-		backdrop-filter: blur(8px);
-		position: sticky;
-		top: 0;
-		z-index: 10;
-	}
-
-	.nav-logo {
-		font-size: 1.4rem;
-		font-weight: 700;
-		color: #ffffff;
-		letter-spacing: 0.04em;
-		text-decoration: none;
-		display: inline-flex;
-		align-items: center;
-	}
-
-	.nav-logo .logo-x {
-		height: .9em;
-		width: auto;
-		vertical-align: middle;
-		margin-left: -0.05em;
-	}
-
-	nav ul {
-		list-style: none;
-		display: flex;
-		gap: 2rem;
-	}
-
-	nav ul a {
-		font-size: 0.95rem;
-		color: #b0b8cc;
-		transition: color 0.2s;
-	}
-
-	nav ul a:hover,
-	nav ul a.active {
-		color: #ffffff;
-		text-decoration: none;
 	}
 
 	main {
